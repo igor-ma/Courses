@@ -1,0 +1,49 @@
+* A simple pipeline simulating interactions on git
+
+	mkdir user1 server new_user
+
+	cd server
+	git init --bare
+
+	cd user1
+	git init
+	#... create files, add, commit, ...
+	git remote add server_nickname path/to/server/
+	git remote #to list the remote servers
+	git push server_nickname master #git push server_nickname branch_name_to_push
+
+	cd new_user
+	git clone path/to/server folder_name_to_have_it
+	git pull
+	git remote rename origin local_server_1 #keeping a standard name on both users
+	git pull local_server_1 master #from server to local master
+	touch new_file
+	git push local_server_1 master
+	cd user1
+	git branch --set-upstream-to=local_server_1/master master
+	git pull
+
+* push -u
+	git push -u origin master #"-u": always when I type "git push", send my branch master to remote server called origin
+
+* "crtl+Z"
+	git checkout -- file_name #level 1 case, file not added yet, reset file to be exactly like in start, removing all updates
+	git reset HEAD file_name #level 2 case, if file is already added, set it to "not added", but keeping updates
+	git revert <commit hash> #level 3 case, commit is already done and you want to cancel it, revert work done on <commit hash>
+	
+* Saving updates for later on (i.e. without committing)
+	git stash #save updates
+	git stash list #list all stashes you have done
+	git stash pop #get the first stash, bring it to our workspace, merging with any possible updates done before, and we can keep doing our work
+	
+* From an specific commit
+	git checkout <commit hash>
+		ATTENTION: at this moment you would be detached from ANY developing line
+		to do any updates, commit and BE ABLE TO ACCESS THEN AFTER, you should create a new branch FROM where this state HEAD is:
+	git checkout -b branch_from_commit
+	
+* Diff
+	git diff from_branch..to_branch
+	
+* Release
+	git tag -a ...
