@@ -1,0 +1,13 @@
+artifact_path: linear_regression
+flavors:
+  python_function:
+    env: conda.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    python_version: 3.8.10
+  sklearn:
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: '1.0'
+run_id: 602a397137e94ad6a07a3f0e088cdb36
+utc_time_created: '2022-02-02 14:41:20.540813'

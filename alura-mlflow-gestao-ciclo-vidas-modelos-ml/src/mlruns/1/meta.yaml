@@ -1,0 +1,4 @@
+artifact_location: file:///l/disk0/iaraujo/%C3%81rea%20de%20Trabalho/estudos/Courses/alura-mlflow-gestao-ciclo-vidas-modelos-ml/src/mlruns/1
+experiment_id: '1'
+lifecycle_stage: active
+name: house-prices-eda

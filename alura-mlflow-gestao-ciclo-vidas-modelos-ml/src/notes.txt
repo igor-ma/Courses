@@ -1,0 +1,8 @@
+Starting server
+	mlflow ui --port 5000
+		everytime you start the server a folder called 'mlruns' will be created on the folder you started the server at
+	
+Running an example, with model specific parameters such as alpha on https://github.com/mlflow/mlflow-example.git
+	mlflow run https://github.com/mlflow/mlflow-example.git -P alpha=0.3
+
+
