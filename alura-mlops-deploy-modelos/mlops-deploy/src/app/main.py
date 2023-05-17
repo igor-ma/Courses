@@ -22,6 +22,7 @@ mlt.model_fit()
 def home():
     return 'Welcome to this simple API'
 
+#test: http://34.95.247.142:5000/sentiment/I like this course
 @app.route('/sentiment/<phrase>')
 @basic_auth.required
 def sentiment_polarity(phrase):
